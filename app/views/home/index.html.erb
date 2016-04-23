@@ -1,0 +1,12 @@
+<% @posts.each do |post| %>
+<article>
+  <h2><%= post.title %></h2>
+  <div class='post-meta'>
+    Last updated: <%= post.created_at.to_s(:long) %>
+  </div>
+
+  <div class='post-content'>
+    <%= simple_format post.content %>
+  </div>
+</article>
+<% end %>

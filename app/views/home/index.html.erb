@@ -2,6 +2,7 @@
 <article>
   <h2><%= post.title %></h2>
   <div class='post-meta'>
+    By: <%= post.author.name  %><br/>
     Last updated: <%= post.created_at.to_s(:long) %>
   </div>
 

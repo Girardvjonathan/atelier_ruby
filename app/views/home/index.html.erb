@@ -9,7 +9,22 @@
   <div class='post-content'>
     <%= simple_format post.content %>
   </div>
-  <div><h4>Write a comment</h4></div>
+  <div><h4>Write a comment</h4>
+    <% @comment = Comment.new(post_id:post.id) %>
+    <%= form_for(@comment) do |f| %>
+
+        <div class="field">
+          <%= f.label :content %><br>
+          <%= f.text_area :content %>
+        </div><div class="hidden-field">
+          <%= f.hidden_field :post_id %>
+    <!--aller voir doc -->
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
+  </div>
   <div><h4>See comments</h4></div>
 
 </article>

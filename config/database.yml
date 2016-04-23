@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: atelier_production
-  username: atelier
+  database: ddmo1k1j1qhsfm
+  username: <%= ENV['USER_DB_HEROKU'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   password: <%= ENV['ATELIER_DATABASE_PASSWORD'] %>
